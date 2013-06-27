@@ -24,6 +24,7 @@ default_action :install
 
 attribute :product_id, :kind_of => String, :name_attribute => true
 attribute :accept_eula, :kind_of => [TrueClass, FalseClass], :default => false
+attribute :suppress_reboot, :kind_of => [TrueClass, FalseClass], :default => true
 
 # Covers 0.10.8 and earlier and COOK-1251
 def initialize(*args)
