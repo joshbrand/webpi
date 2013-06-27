@@ -29,7 +29,7 @@ action :install do
   unless @install_list.empty?
     cmd = "\"#{webpicmd}\" /Install"
     cmd << " /products:#{@install_list}"
-    cmd << " /suppressreboot" if @new_resource.suppress_reboot
+    cmd << " /forcereboot" if @new_resource.force_reboot
     cmd << " /accepteula" if @new_resource.accept_eula
     cmd << " /XML:#{node['webpi']['xmlpath']}" if node['webpi']['xmlpath']
     cmd << " /Log:#{node['webpi']['log']}"
